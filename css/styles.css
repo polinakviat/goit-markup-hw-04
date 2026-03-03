@@ -54,6 +54,9 @@ img {
 
 /* #region Header */
 .header {
+    box-shadow: 0px 1px 6px 0px #2E2F4214,
+    0px 1px 1px 0px #2E2F4229,
+    0px 2px 1px 0px #2E2F4214;
     border-bottom: 1px solid #E7E9FC;
     display: flex;
 }
@@ -83,6 +86,8 @@ img {
 }
 
 .nav-link {
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
     padding: 24px 0;
     display: inline-block;
     font-weight: 500;
@@ -98,7 +103,7 @@ img {
     margin-top: 21px;
     content: "";
     display: block;
-    width: 48px;
+    width: 100%;
     height: 4px;
     background-color: #404BBF;
     border-radius: 2px;
@@ -106,7 +111,6 @@ img {
 
 .nav-link.active,
 .nav-link:hover {
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     font-weight: 500;
     line-height: 1.5;
     font-size: 1em;
@@ -120,9 +124,7 @@ img {
     letter-spacing: 0.02em;
     color: #404BBF;
 }
-.nav-link:focus {
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    font-weight: 500;
+.nav-link:focus {font-weight: 500;
     line-height: 1.5;
     font-size: 1em;
     letter-spacing: 0.02em;
@@ -132,7 +134,6 @@ img {
 .contacts {
     display: inline-block;
     padding: 24px 0;
-    padding-left: auto;
     font-size: 1em;
     font-weight: 400;
     line-height: 1.5;
@@ -166,6 +167,7 @@ img {
 }
 
 .contacts {
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     color: #434455;
 }
@@ -175,11 +177,9 @@ img {
     line-height: 1.5;
     font-style: normal;
     letter-spacing: 0.02em;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     color: #404BBF;
 }
 .contacts:focus {
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     color: #404BBF;
 }
 
@@ -188,6 +188,9 @@ img {
 /* #region Hero */
 
 .hero-section {
+    max-width: 1440px;
+    margin: 0 auto;
+    background-position: center;
     padding: 188px 0;
     background-image: linear-gradient(rgba(46, 47, 66, 0.7)), url("../images/people-office1.png");
     background-repeat: no-repeat;
@@ -207,8 +210,9 @@ img {
     color: #FFFFFF;
 }
 
-
 .button {
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0px 4px 4px 0px #00000026;
     border: none;
     border-radius: 4px;
     padding: 16px 32px;
@@ -223,13 +227,11 @@ img {
     color: #FFFFFF;
 }
 .button:hover {
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: #404BBF;
     color: #FFFFFF;
 }
 
 .button:focus {
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     border-color: #404BBF;
     background-color: #404BBF;
     color: #FFFFFF;
@@ -267,11 +269,16 @@ img {
 }
 
 .feature-wrapper {
+    height: 112px;
     background-color: #F4F4FD;
     padding: 24px 100px;
     border: 1px solid #8E8F99;
     border-radius: 4px;
     margin-bottom: 8px;
+}
+
+.feature-ill {
+    display: flexbox;
 }
 
 .feature-heading {
@@ -297,12 +304,14 @@ img {
 /* #region Team */
 
 .team {
+    padding-top: 120px;
+    padding-bottom: 120px;
     background-color: #F4F4FD;
     color: #2E2F42;
 }
 
 .team-heading {
-    padding-top: 120px;
+    
     font-weight: 700;
     font-size: 2.25em;
     line-height: 1.11;
@@ -316,7 +325,6 @@ img {
     width: calc(264px * 4);
     display: flex;
     padding-top: 72px;
-    padding-bottom: 120px;
     gap: 24px;
 }
 
@@ -344,7 +352,7 @@ img {
     color: #2E2F42;
 }
 
-.team-socials {
+.socials-list {
     margin-top: 8px;
     display: flex;
     justify-content: center;
@@ -353,18 +361,26 @@ img {
 }
 
 .socials {
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block;
+    fill: #F4F4FD;
+    
+}
+
+.socials-link {
     border: none;
     border-radius: 50%;
     background-color: #4D5AE5;
-    stroke: #F4F4FD;
-    padding: 12px;
+    width: 40px;
+    height: 40px;
 }
 
-.socials:hover {
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.socials-link:hover,
+.socials-link:focus {
+    border: none;
+    border-radius: 50%;
     background-color: #404BBF;
-    stroke: #F4F4FD;
+    fill: #F4F4FD;
 }
 
 .member-content-wrapper {
@@ -423,7 +439,6 @@ img {
 }
 
 .portfolio-element:hover {
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 
     0 2px 1px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.08),
@@ -431,6 +446,7 @@ img {
 }
 
 .portfolio-element {
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     width: calc((100% - 24px * 2) / 3);
     
 }
@@ -449,8 +465,8 @@ img {
 }
 
 .overlay {
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translateY(300px);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(100%);
     position: absolute;
     top: 0;
     left: 0;
@@ -464,13 +480,12 @@ img {
     font-weight: 400;
     letter-spacing: 0.02em;
     color: #F4F4FD;
-    padding: 32px 40px;
+    padding: 40px 32px;
     background-color: #4D5AE5;
 }
 
 .portfolio-element:hover .overlay {
-    transform: translateY(0);
-    
+    transform: translateY(0);   
 }
 
 /* #endregion */
@@ -478,19 +493,11 @@ img {
 /* #region Footer */
 
 .footer > .container {
-    
-}
-
-.footer-block-1 {
-    display: inline-block;
-}
-
-.footer-block-2 {
-    display: inline-block;
-    justify-content: space-between;
+    display: flex;
     align-items: baseline;
-    margin-left: 120px;
+    gap: 120px;
 }
+
 
 .footer-paragraph {
     max-width: 264px;
@@ -529,20 +536,17 @@ img {
     padding: 100px 0;
 }
 
-.footer-ill {
+.footer-socials-link {
     display: inline-block;
 
 }
 
-.socials-list {
+.footer-socials-list {
     display: flex;
     gap: 16px;
     list-style: none;
 }
 
-.container-1 {
-    display: inline-block;
-}
 
 .footer-socials {
     border: none;
@@ -553,14 +557,12 @@ img {
     display: inline-block;
     width: 40px;
     height: 40px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .footer-socials:hover {
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: #404BBF;
+    background-color: #31D0AA;
     fill: #FFFFFF;
-}
-.socials:hover {
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* #endregion */
