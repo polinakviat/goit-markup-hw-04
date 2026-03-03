@@ -99,8 +99,8 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link.active::after {
-    position: absolute;
-    margin-top: 21px;
+    position: relative;
+    top: 25px;
     content: "";
     display: block;
     width: 100%;
@@ -311,7 +311,6 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-heading {
-    
     font-weight: 700;
     font-size: 2.25em;
     line-height: 1.11;
@@ -361,13 +360,16 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socials {
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    display: inline-block;
+    position: relative;
+    top: 12px;
+    left: 12px;
+    display: flex;
     fill: #F4F4FD;
-    
 }
 
 .socials-link {
+    display: flex;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     border: none;
     border-radius: 50%;
     background-color: #4D5AE5;
@@ -536,10 +538,6 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     padding: 100px 0;
 }
 
-.footer-socials-link {
-    display: inline-block;
-
-}
 
 .footer-socials-list {
     display: flex;
@@ -549,18 +547,27 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 
 .footer-socials {
+    position: relative;
+    top: 8px;
+    left: 8px;
+    display: flex;
+    fill: #FFFFFF;
+}
+
+.footer-socials-link {
+    display: flex;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     border: none;
     border-radius: 50%;
     background-color: #4D5AE5;
-    fill: #FFFFFF;
-    padding: 12px;
-    display: inline-block;
     width: 40px;
     height: 40px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-socials:hover {
+.footer-socials-link:hover,
+.footer-socials-link:focus {
+    border: none;
+    border-radius: 50%;
     background-color: #31D0AA;
     fill: #FFFFFF;
 }
